@@ -1,0 +1,62 @@
+.container-def{
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem;
+    h1{
+        text-align: left;
+        font-size: 5vw;
+        padding-bottom: 2rem;
+    }
+    p{
+        font-size: 2vw;
+        margin: 2rem 0;
+    }
+    img{
+        background-color: rgba(255, 255, 255, 0.699);
+        width: 50vw;
+        }
+        label{
+            color: #C586C0;
+            display: block;
+            font-size: 2vw;
+
+        }
+        input[type=text]{
+            width: 100%;
+            background-color: #9cdcfe54;
+            padding: 1vw;
+            font-size: 3vw;
+            color: #fff;
+        }
+        input[type=range]{
+            width: 100%;
+            background-color: #9cdcfe54;
+            padding: 1vw;
+            font-size: 3vw;
+            color: #fff;
+        }
+        input[type=radio]{
+            width: 2vw;
+            height: 2vh;
+        }
+        h2{
+            font-size: 3vw;
+        }
+        .next{
+            font-size: 1.5vw;
+            color: #FFCC66;
+            width: 100%;
+            margin-top: 2vh;
+            text-align: right;
+        }
+        // Background Color: #1E1E1E
+// Text Color: #D4D4D4
+// Accent Color 1: #569CD6 (Blue)
+// Accent Color 2: #CE9178 (Orange)
+// Accent Color 3: #C586C0 (Purple)
+// Accent Color 4: #9CDCFE (Light Blue)
+// Accent Color 5: #4EC9B0 (Teal)
+// Error Color: #F44747 (Red)
+// Warning Color: #FFCC66 (Yellow)
+// Success Color: #98C379 (Green)
+}

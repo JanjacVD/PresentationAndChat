@@ -1,0 +1,12 @@
+
+Encryption is the process of converting plaintext (unencrypted data) into ciphertext (encrypted data) using an algorithm or mathematical function called a cipher. The purpose of encryption is to ensure the confidentiality and security of sensitive information, such as personal data, financial transactions, or communication between individuals or systems.
+
+Encryption uses cryptographic keys to transform the original data into a form that is unreadable and unintelligible without the corresponding key or password. The encrypted data can only be decrypted and restored to its original form by authorized parties who possess the correct key.
+
+There are two primary types of encryption: symmetric encryption and asymmetric encryption.
+
+Symmetric Encryption: In symmetric encryption, the same key is used for both encryption and decryption. The sender and the recipient of the encrypted message must share this secret key in advance. Symmetric encryption algorithms, such as Advanced Encryption Standard (AES), are generally faster and more efficient for encrypting large amounts of data.
+
+Asymmetric Encryption: Also known as public-key encryption, asymmetric encryption uses a pair of mathematically related keys: a public key and a private key. The public key is widely distributed and used to encrypt data, while the private key is kept secret and used for decryption. Asymmetric encryption algorithms, such as RSA (Rivest-Shamir-Adleman), provide mechanisms for secure key exchange and digital signatures.
+
+Encryption plays a crucial role in protecting sensitive information from unauthorized access, ensuring data integrity, and enabling secure communication over networks, including the internet. It is widely used in various applications, such as secure messaging, online transactions, virtual private networks (VPNs), and data storage systems.

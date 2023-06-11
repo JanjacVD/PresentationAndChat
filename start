@@ -1,0 +1,8 @@
+
+
+npx localtunnel --port 8000
+~check file const.ts
+change apiUrl
+
+php artisan serve
+php artisan websocket:serve
