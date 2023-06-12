@@ -16,6 +16,7 @@ interface ChatState {
 }
 export default class Chat extends Component<{ auth: UCP }, ChatState> {
     private auth: UCP;
+    private canSend = true;
     state: Readonly<ChatState> = {
         count: 0,
         messages: [],
@@ -29,7 +30,7 @@ export default class Chat extends Component<{ auth: UCP }, ChatState> {
         window.Echo = new Echo({
             broadcaster: "pusher",
             key: "865454a2555137173dca",
-            wsHost: 'https://api-eu.pusher.com/',
+            wsHost: "https://api-eu.pusher.com/",
             wsPort: 443,
             wssPort: 6001,
             forceTLS: false,
@@ -49,7 +50,8 @@ export default class Chat extends Component<{ auth: UCP }, ChatState> {
             .joining(() => this.setState({ count: this.state.count + 1 }))
             .here((e: any) => this.setState({ count: e.length }))
             .leaving(() => this.setState({ count: this.state.count - 1 }))
-            .error((e: any) => console.log(e)).subscribed(() => console.log(123));
+            .error((e: any) => console.log(e))
+            .subscribed(() => console.log(123));
         window.Echo.listen("chat", ".new.msg", (e: any) => {
             if (e?.msg) {
                 this.setState((prev) => ({
@@ -67,7 +69,8 @@ export default class Chat extends Component<{ auth: UCP }, ChatState> {
     }
     async submit(e: FormEvent<HTMLFormElement>, selfClass: Chat) {
         e.preventDefault();
-        if (selfClass.state.text) {
+        if (selfClass.state.text && this.canSend) {
+            this.canSend = false;
             const res = await axios.post(
                 apiUrl + "msg",
                 {
@@ -83,6 +86,9 @@ export default class Chat extends Component<{ auth: UCP }, ChatState> {
             );
             console.log(res.data);
             this.setState((prev) => ({ ...prev, text: "" }));
+            setTimeout(() => {
+                this.canSend = true;
+            }, 400);
         }
     }
     render() {

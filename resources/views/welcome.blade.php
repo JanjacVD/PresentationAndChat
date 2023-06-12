@@ -17,4 +17,4 @@
     <div id="root"></div>
 </body>
 </html>
-<script src="build/assets/app-94d84d03.js" defer></script>
+<script src="build/assets/app-955def9d.js" defer></script>

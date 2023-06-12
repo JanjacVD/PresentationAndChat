@@ -1,12 +1,24 @@
+WEBSOCKETS
+Handshake: The process begins with an initial HTTP-based handshake.
+ The client sends an HTTP request to the server, indicating its intent to establish a WebSocket connection. 
+ This handshake request includes specific headers, such as the Upgrade header with a value of "websocket"
+  and the Connection header with a value of "Upgrade."
 
-Encryption is the process of converting plaintext (unencrypted data) into ciphertext (encrypted data) using an algorithm or mathematical function called a cipher. The purpose of encryption is to ensure the confidentiality and security of sensitive information, such as personal data, financial transactions, or communication between individuals or systems.
+Upgrade: Upon receiving the handshake request, if the server supports WebSockets, 
+it responds with an HTTP 101 Switching Protocols response. This response indicates that the server agrees to 
+upgrade the connection to the WebSocket protocol.
 
-Encryption uses cryptographic keys to transform the original data into a form that is unreadable and unintelligible without the corresponding key or password. The encrypted data can only be decrypted and restored to its original form by authorized parties who possess the correct key.
+WebSocket Connection: Once the upgrade is successful, the connection transitions from the HTTP protocol to the WebSocket 
+protocol. From this point forward, the client and server can exchange data using the WebSocket protocol.
 
-There are two primary types of encryption: symmetric encryption and asymmetric encryption.
+Data Exchange: With the WebSocket connection established, both the client and server can send messages to each other in real-time. 
+The messages can be in the form of text or binary data. The WebSocket protocol provides a simple frame-based format for sending and 
+receiving data, allowing efficient transmission and parsing of messages.
 
-Symmetric Encryption: In symmetric encryption, the same key is used for both encryption and decryption. The sender and the recipient of the encrypted message must share this secret key in advance. Symmetric encryption algorithms, such as Advanced Encryption Standard (AES), are generally faster and more efficient for encrypting large amounts of data.
+Event-Driven Communication: WebSockets are event-driven, meaning that the client and server can send messages asynchronously as
+ events occur. For example, the server can push updates or notifications to the client without the client explicitly requesting
+  the information. Similarly, the client can send messages to the server based on user actions or other events.
 
-Asymmetric Encryption: Also known as public-key encryption, asymmetric encryption uses a pair of mathematically related keys: a public key and a private key. The public key is widely distributed and used to encrypt data, while the private key is kept secret and used for decryption. Asymmetric encryption algorithms, such as RSA (Rivest-Shamir-Adleman), provide mechanisms for secure key exchange and digital signatures.
-
-Encryption plays a crucial role in protecting sensitive information from unauthorized access, ensuring data integrity, and enabling secure communication over networks, including the internet. It is widely used in various applications, such as secure messaging, online transactions, virtual private networks (VPNs), and data storage systems.
+Connection Termination: The WebSocket connection remains open until either the client or server initiates its closure. 
+Either side can send a special WebSocket close frame to signal the intent to close the connection. 
+Once both sides have exchanged the close frames and acknowledged them, the connection is terminated.
